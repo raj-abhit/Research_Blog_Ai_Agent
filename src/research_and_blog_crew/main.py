@@ -1,20 +1,32 @@
+"""
+Research and Blog AI Agent - Main Entry Point
+
+This module serves as the primary entry point for running the AI crew.
+The crew generates comprehensive research reports and converts them into
+engaging blog posts on any specified topic.
+
+Usage:
+    python -m research_and_blog_crew.main
+    
+    Or use the installed command:
+    run_crew
+"""
 
 from research_and_blog_crew.crew import ResearchAndBlogCrew
 
 
-
-# This main file is intended to be a way for you to run your
-# crew locally, so refrain from adding unnecessary logic into this file.
-# Replace with inputs you want to test with, it will automatically
-# interpolate any tasks and agents information
-
 def run():
     """
-    Run the crew.
+    Run the research and blog generation crew.
+    
+    The crew operates in two sequential steps:
+    1. Research Agent generates a detailed report on the topic
+    2. Blog Writer transforms the report into an engaging blog post
+    
+    The output is saved to the blogs/ directory.
     """
     inputs = {
         'topic': 'AI agents in coding',
-        
     }
 
     try:
