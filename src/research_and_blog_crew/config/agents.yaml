@@ -1,3 +1,7 @@
+# Agent Configurations
+# Define the roles, goals, and backstories for each AI agent in the crew
+
+# Research Agent - Conducts comprehensive research on any topic
 report_generator:
   role: >
     Expert report generator on {topic}
@@ -9,6 +13,7 @@ report_generator:
     included along with current and future trends, is simple to read with good analogies 
     where ever applicable.
 
+# Blog Writing Agent - Transforms research into engaging content
 blog_writer:
   role: >
     Expert Blog Writer on {topic}
