@@ -1,3 +1,7 @@
+# Task Configurations
+# Define the tasks that each agent will perform
+
+# Research Task - Generate comprehensive research report
 report_task:
   description: >
     Based on the input topic: {topic}, generate a detailed report including all the
@@ -7,6 +11,7 @@ report_task:
     2000 words long report on the topic: {topic}
   agent: report_generator
 
+# Blog Writing Task - Create engaging blog post from research
 blog_writing_task:
   description: >
     Based on the report on {topic}, create a well written and structured blog that
