@@ -1,53 +1,99 @@
-# ResearchAndBlogCrew Crew
+# Research and Blog AI Agent
 
-Welcome to the ResearchAndBlogCrew Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+An intelligent multi-agent system powered by [crewAI](https://crewai.com) that automatically generates detailed research reports and converts them into engaging blog posts on any topic.
 
-## Installation
+## 🚀 Features
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+- **Automated Research**: AI agents conduct comprehensive research on any topic
+- **Blog Generation**: Automatically converts research into easy-to-read blog posts
+- **Multi-Agent Collaboration**: Two specialized agents work together (Research Generator & Blog Writer)
+- **LLM Integration**: Supports multiple LLM providers (OpenAI, Groq, Anthropic, etc.)
+- **Easy Execution**: Simple batch file for Windows or command-line execution
 
-First, if you haven't already, install uv:
+## 📋 Prerequisites
 
+- Python >=3.10 <3.14
+- LLM API Key (Groq, OpenAI, or other supported providers)
+
+## ⚙️ Installation
+
+1. Clone the repository:
 ```bash
-pip install uv
+git clone https://github.com/raj-abhit/Research_Blog_Ai_Agent.git
+cd Research_Blog_Ai_Agent
 ```
 
-Next, navigate to your project directory and install the dependencies:
-
-(Optional) Lock the dependencies and install them by using the CLI command:
+2. Create a virtual environment:
 ```bash
-crewai install
-```
-### Customizing
-
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/research_and_blog_crew/config/agents.yaml` to define your agents
-- Modify `src/research_and_blog_crew/config/tasks.yaml` to define your tasks
-- Modify `src/research_and_blog_crew/crew.py` to add your own logic, tools and specific args
-- Modify `src/research_and_blog_crew/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
-
-```bash
-$ crewai run
+python -m venv .venv
+.venv\Scripts\activate  # Windows
 ```
 
-This command initializes the research_and_blog_crew Crew, assembling the agents and assigning them tasks as defined in your configuration.
+3. Install dependencies:
+```bash
+pip install -e .
+```
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+4. Configure your API key in `.env`:
+```env
+MODEL=groq/llama-3.1-8b-instant
+GROQ_API_KEY=your-api-key-here
+```
 
-## Understanding Your Crew
+## 🎯 Usage
 
-The research_and_blog_crew Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+### Windows (Easy Way)
+Double-click `run.bat` or run:
+```cmd
+run.bat
+```
 
-## Support
+### Command Line
+```bash
+python -m research_and_blog_crew.main
+```
 
-For support, questions, or feedback regarding the ResearchAndBlogCrew Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
+Or use the installed script:
+```bash
+run_crew
+```
+
+## 📁 Project Structure
+
+```
+research_and_blog_crew/
+├── src/
+│   └── research_and_blog_crew/
+│       ├── config/
+│       │   ├── agents.yaml      # Agent definitions
+│       │   └── tasks.yaml       # Task configurations
+│       ├── tools/
+│       │   └── custom_tool.py   # Custom tools
+│       ├── crew.py              # Main crew logic
+│       └── main.py              # Entry point
+├── blogs/                       # Generated blog posts
+├── knowledge/                   # User preferences
+└── run.bat                      # Windows launcher
+```
+
+## 🤖 Agents
+
+1. **Report Generator**: Expert researcher that creates detailed, multi-dimensional reports
+2. **Blog Writer**: Transforms research into engaging, fun-to-read blog content
+
+## 🛠️ Customization
+
+**Change the topic**: Edit `main.py`
+```python
+inputs = {
+    'topic': 'Your Topic Here',
+}
+```
+
+**Modify agents**: Edit `config/agents.yaml`
+**Modify tasks**: Edit `config/tasks.yaml`
+
+**Add custom tools**: Create new tools in `tools/custom_tool.py`
 - [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
 - [Chat with our docs](https://chatg.pt/DWjSBZn)
 
