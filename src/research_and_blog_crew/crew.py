@@ -5,6 +5,15 @@ import os
 
 @CrewBase
 class ResearchAndBlogCrew():
+    """
+    Research and Blog AI Agent Crew
+    
+    A multi-agent system that conducts research and generates blog content.
+    Consists of two specialized agents working in sequence:
+    1. Report Generator - Conducts comprehensive research
+    2. Blog Writer - Transforms research into engaging content
+    """
+    
     #path of  config file
     agents_config = "config/agents.yaml"
     tasks_config = "config/tasks.yaml"
